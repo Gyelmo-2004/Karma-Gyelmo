@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #20283a;
+            padding: 22px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .date {
+            color: #697386;
+            font-size: 13px;
+        }
+
+        .add-btn {
+            background: #405ddd;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 7px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .add-btn:hover {
+            background: #304bc5;
+        }
+
+        /* SUMMARY CARDS */
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e0e4ec;
+            border-radius: 12px;
+            padding: 15px;
+            height: 73px;
+        }
+
+        .card h2 {
+            font-size: 26px;
+            margin-bottom: 3px;
+        }
+
+        .card p {
+            color: #697386;
+            font-size: 13px;
+        }
+
+        /* SEARCH AREA */
+        .filters {
+            display: grid;
+            grid-template-columns: 1fr 245px;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .search,
+        .status-filter {
+            height: 39px;
+            background: white;
+            border: 1px solid #dce1e9;
+            border-radius: 8px;
+            padding: 0 15px;
+            font-size: 13px;
+            color: #20283a;
+            outline: none;
+        }
+
+        .search:focus,
+        .status-filter:focus {
+            border-color: #405ddd;
+        }
+
+        /* TABLE */
+        .table-box {
+            background: white;
+            border: 1px solid #dce1e9;
+            border-radius: 13px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            color: #687389;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            padding: 11px 19px;
+            border-bottom: 1px solid #e4e7ed;
+        }
+
+        td {
+            padding: 14px 19px;
+            border-bottom: 1px solid #e4e7ed;
+            font-size: 14px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .employee {
+            font-weight: bold;
+        }
+
+        /* STATUS */
+        .status {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .present {
+            background: #e3f5e8;
+            color: #16a33a;
+        }
+
+        .late {
+            background: #fff0dc;
+            color: #e99422;
+        }
+
+        .absent {
+            background: #ffe5e5;
+            color: #ef4444;
+        }
+
+        .leave {
+            background: #eee5ff;
+            color: #7047ed;
+        }
+
+        /* ACTION BUTTON */
+        .action-btn {
+            background: white;
+            border: 1px solid #dce1e9;
+            border-radius: 8px;
+            padding: 6px 13px;
+            font-size: 12px;
+            cursor: pointer;
+            color: #20283a;
+        }
+
+        .action-btn:hover {
+            background: #f4f6fa;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            .summary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .filters {
+                grid-template-columns: 1fr;
+            }
+
+            .table-box {
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 850px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .header {
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .add-btn {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+
+            .summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+            <h1>Employee Attendance</h1>
+            <div class="date" id="currentDate"></div>
+        </div>
+
+        <button class="add-btn" onclick="addEmployee()">
+            + Add employee
+        </button>
+    </div>
+
+
+    <!-- SUMMARY -->
+    <div class="summary">
+
+        <div class="card">
+            <h2 id="total">6</h2>
+            <p>Total</p>
+        </div>
+
+        <div class="card">
+            <h2 id="presentCount">3</h2>
+            <p>Present</p>
+        </div>
+
+        <div class="card">
+            <h2 id="lateCount">1</h2>
+            <p>Late</p>
+        </div>
+
+        <div class="card">
+            <h2 id="absentCount">1</h2>
+            <p>Absent</p>
+        </div>
+
+        <div class="card">
+            <h2 id="leaveCount">1</h2>
+            <p>On leave</p>
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH AND FILTER -->
+    <div class="filters">
+
+        <input
+            type="text"
+            id="search"
+            class="search"
+            placeholder="Search name or department"
+            onkeyup="filterTable()"
+        >
+
+        <select
+            id="statusFilter"
+            class="status-filter"
+            onchange="filterTable()"
+        >
+            <option value="all">All statuses</option>
+            <option value="Present">Present</option>
+            <option value="Late">Late</option>
+            <option value="Absent">Absent</option>
+            <option value="On leave">On leave</option>
+        </select>
+
+    </div>
+
+
+    <!-- ATTENDANCE TABLE -->
+    <div class="table-box">
+
+        <table id="attendanceTable">
+
+            <thead>
+                <tr>
+                    <th>EMPLOYEE</th>
+                    <th>DEPARTMENT</th>
+                    <th>STATUS</th>
+                    <th>CHECK IN</th>
+                    <th>CHECK OUT</th>
+                    <th>HOURS</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td class="employee">Nima Lotay</td>
+                    <td>CEO</td>
+                    <td>
+                        <span class="status present">Present</span>
+                    </td>
+                    <td>08:52</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>
+                        <button class="action-btn"
+                                onclick="checkOut(this)">
+                            Check out
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="employee">Dorji Wangchuk</td>
+                    <td>Technicial head</td>
+                    <td>
+                        <span class="status late">Late</span>
+                    </td>
+                    <td>09:48</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>
+                        <button class="action-btn"
+                                onclick="checkOut(this)">
+                            Check out
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="employee">Sonam Zangmo</td>
+                    <td>Manager</td>
+                    <td>
+                        <span class="status present">Present</span>
+                    </td>
+                    <td>09:05</td>
+                    <td>17:30</td>
+                    <td>8h 25m</td>
+                    <td></td>
+                </tr>
+
+
+                <tr>
+                    <td class="employee">Chimi Seldon</td>
+                    <td>Senior Accountant</td>
+                    <td>
+                        <span class="Present">On leave</span>
+                    </td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td></td>
+                </tr>
+
+
+                <tr>
+                    <td class="employee">Rinchen Chelzom</td>
+                    <td>Senior Accountant</td>
+                    <td>
+                        <span class="status absent">Absent</span>
+                    </td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>
+                        <button class="action-btn"
+                                onclick="checkIn(this)">
+                            Check in
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="employee">Karma Gyelmo</td>
+                    <td>Technician</td>
+                    <td>
+                        <span class="status present">Present</span>
+                    </td>
+                    <td>08:40</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>
+                        <button class="action-btn"
+                                onclick="checkOut(this)">
+                            Check out
+                        </button>
+                    </td>
+                </tr>
+				<tr>
+				
+				    <td class="employee">Tulasi Gurung</td>
+                    <td>Technician</td>
+                    <td>
+                        <span class="status present">Present</span>
+                    </td>
+                    <td>08:40</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>
+                        <button class="action-btn"
+						        onclick="checkOut(this)">
+                            Check out
+                        </button>
+                    </td>
+                </tr>
+                                o
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* CURRENT DATE */
+    const today = new Date();
+
+    const options = {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+    };
+
+    document.getElementById("currentDate").textContent =
+        today.toLocaleDateString("en-US", options);
+
+
+    /* SEARCH AND FILTER */
+    function filterTable() {
+
+        const search =
+            document.getElementById("search").value.toLowerCase();
+
+        const filter =
+            document.getElementById("statusFilter").value;
+
+        const rows =
+            document.querySelectorAll("#attendanceTable tbody tr");
+
+        rows.forEach(row => {
+
+            const employee =
+                row.cells[0].textContent.toLowerCase();
+
+            const department =
+                row.cells[1].textContent.toLowerCase();
+
+            const status =
+                row.cells[2].textContent.trim();
+
+            const matchesSearch =
+                employee.includes(search) ||
+                department.includes(search);
+
+            const matchesStatus =
+                filter === "all" ||
+                status === filter;
+
+            row.style.display =
+                matchesSearch && matchesStatus ? "" : "none";
+        });
+    }
+
+
+    /* CHECK OUT */
+    function checkOut(button) {
+
+        const row = button.closest("tr");
+
+        const now = new Date();
+
+        const time =
+            now.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false
+            });
+
+        row.cells[4].textContent = time;
+
+        button.remove();
+
+        alert("Employee checked out at " + time);
+    }
+
+
+    /* CHECK IN */
+    function checkIn(button) {
+
+        const row = button.closest("tr");
+
+        const now = new Date();
+
+        const time =
+            now.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false
+            });
+
+        row.cells[3].textContent = time;
+
+        row.cells[2].innerHTML =
+            '<span class="status present">Present</span>';
+
+        button.textContent = "Check out";
+
+        button.onclick = function () {
+            checkOut(this);
+        };
+
+        updateCounts();
+    }
+
+
+    /* ADD EMPLOYEE */
+    function addEmployee() {
+
+        const name =
+            prompt("Enter employee name:");
+
+        if (!name) return;
+
+        const department =
+            prompt("Enter department:");
+
+        if (!department) return;
+
+        const table =
+            document.querySelector("#attendanceTable tbody");
+
+        const row =
+            document.createElement("tr");
+
+        row.innerHTML = `
+            <td class="employee">${name}</td>
+            <td>${department}</td>
+            <td>
+                <span class="status absent">Absent</span>
+            </td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>
+                <button class="action-btn"
+                        onclick="checkIn(this)">
+                    Check in
+                </button>
+            </td>
+        `;
+
+        table.appendChild(row);
+
+        updateCounts();
+    }
+
+
+    /* UPDATE SUMMARY NUMBERS */
+    function updateCounts() {
+
+        const rows =
+            document.querySelectorAll(
+                "#attendanceTable tbody tr"
+            );
+
+        let present = 0;
+        let late = 0;
+        let absent = 0;
+        let leave = 0;
+
+        rows.forEach(row => {
+
+            const status =
+                row.cells[2].textContent.trim();
+
+            if (status === "Present") present++;
+            if (status === "Late") late++;
+            if (status === "Absent") absent++;
+            if (status === "On leave") leave++;
+
+        });
+
+        document.getElementById("total").textContent =
+            rows.length;
+
+        document.getElementById("presentCount").textContent =
+            present;
+
+        document.getElementById("lateCount").textContent =
+            late;
+
+        document.getElementById("absentCount").textContent =
+            absent;
+
+        document.getElementById("leaveCount").textContent =
+            leave;
+    }
+
+</script>
+
+</body>
+</html>
