@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nilo FiberNet | Thimphu's Trusted Internet Partner</title>
+<style>
+  :root{
+    --navy:#0b3a5e; --navy-dark:#082c48; --green:#2fae4e; --orange:#f28c1e;
+    --ink:#1c2733; --muted:#5d6b78; --bg:#f4f7fa; --white:#fff; --radius:12px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+  .container{width:min(1140px,92%);margin-inline:auto}
+
+  /* Buttons */
+  .btn{display:inline-block;padding:.7rem 1.5rem;border:0;border-radius:6px;font-weight:600;font-size:.95rem;cursor:pointer;color:#fff;transition:transform .15s,filter .15s}
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn-green{background:var(--green)} .btn-orange{background:var(--orange)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--white);box-shadow:0 1px 6px rgba(0,0,0,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+  .logo{font-weight:800;font-size:1.4rem;color:var(--navy)}
+  .logo span{color:var(--green)}
+  nav ul{display:flex;align-items:center;gap:1.8rem;list-style:none}
+  nav a{font-weight:500}
+  nav a:hover{color:var(--green)}
+  .menu-btn{display:none;background:none;border:0;font-size:1.8rem;color:var(--navy);cursor:pointer}
+
+  /* Hero */
+  .hero{background:var(--navy-dark);color:#fff;padding:4rem 0}
+  .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.15;margin-bottom:1rem}
+  .hero h1 em{font-style:normal;color:var(--green)}
+  .hero p{color:#c9d8e6;max-width:46ch;margin-bottom:1.6rem}
+  .hero .actions{display:flex;gap:.8rem;flex-wrap:wrap}
+  .media{border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#0f4c7a,#061d31);aspect-ratio:16/10}
+  .media img{width:100%;height:100%;object-fit:cover}
+
+  /* Features */
+  .features{padding:3rem 0;background:var(--white)}
+  .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+  .feature{text-align:center;padding:1rem}
+  .feature .icon{font-size:2rem;margin-bottom:.4rem}
+  .feature h3{font-size:1rem;color:var(--navy);margin-bottom:.3rem}
+  .feature p{font-size:.88rem;color:var(--muted)}
+
+  /* Packages */
+  .packages{padding:3rem 0;background:var(--bg)}
+  .section-title{text-align:center;margin-bottom:2rem}
+  .section-title h2{font-size:1.8rem;color:var(--navy)}
+  .section-title p{color:var(--muted)}
+  .plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+  .plan{background:var(--white);border-radius:var(--radius);padding:1.6rem 1.3rem;box-shadow:0 4px 14px rgba(11,58,94,.1);border-top:4px solid var(--c,var(--green));display:flex;flex-direction:column}
+  .plan:nth-child(1){--c:#2fae4e} .plan:nth-child(2){--c:#2a8bd6}
+  .plan:nth-child(3){--c:#8e44ad} .plan:nth-child(4){--c:#f28c1e}
+  .plan h3{color:var(--navy);font-size:1.25rem}
+  .plan .sub{font-size:.85rem;color:var(--muted);margin-bottom:.8rem}
+  .plan .price{font-weight:700;font-size:1.3rem;color:var(--c);margin-bottom:1rem}
+  .plan .price small{font-weight:400;color:var(--muted);font-size:.8rem}
+  .plan ul{list-style:none;margin-bottom:1.2rem;flex:1}
+  .plan li{font-size:.9rem;padding:.3rem 0 .3rem 1.6rem;position:relative}
+  .plan li::before{content:"✓";position:absolute;left:0;top:.3rem;width:1.1rem;height:1.1rem;border-radius:3px;background:var(--green);color:#fff;font-size:.75rem;display:grid;place-items:center}
+  .plan .btn{text-align:center;background:var(--c)}
+
+  /* Custom plan strip */
+  .custom{background:var(--white);padding:2rem 0}
+  .custom .container{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+  .custom h3{color:var(--navy)} .custom p{color:var(--muted);font-size:.92rem}
+
+  /* About */
+  .about{background:var(--navy-dark);color:#fff;padding:4rem 0}
+  .about .container{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:center}
+  .about h2{font-size:1.6rem;margin-bottom:.8rem}
+  .about p{color:#c9d8e6;font-size:.95rem;margin-bottom:.8rem}
+  .about .media{aspect-ratio:16/9}
+
+  /* Stats */
+  .stats{padding:2.5rem 0;background:var(--white)}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .stat .icon{font-size:1.8rem;color:var(--green)}
+  .stat strong{display:block;color:var(--navy);font-size:1.3rem}
+  .stat span{font-size:.85rem;color:var(--muted)}
+
+  /* Contact */
+  .contact{background:var(--bg);padding:3rem 0}
+  .contact .container{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem}
+  .contact h2{color:var(--navy);margin-bottom:.5rem}
+  .info{list-style:none;margin-top:1rem}
+  .info li{display:flex;gap:.8rem;padding:.5rem 0;align-items:flex-start}
+  .info .ic{flex:0 0 2rem;height:2rem;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;font-size:.9rem}
+  form{background:var(--white);padding:1.5rem;border-radius:var(--radius);box-shadow:0 4px 14px rgba(11,58,94,.1)}
+  label{display:block;font-weight:600;font-size:.88rem;margin:.6rem 0 .25rem}
+  input,textarea{width:100%;padding:.65rem .8rem;border:1px solid #ccd6df;border-radius:6px;font:inherit;background:#eef2f6}
+  textarea{min-height:110px;resize:vertical}
+  form .btn{margin-top:1rem}
+  .form-msg{margin-top:.8rem;color:var(--green);font-weight:600;min-height:1.4em}
+
+  /* Footer */
+  footer{background:var(--navy);color:#fff;padding:1.4rem 0}
+  footer .container{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap;font-size:.92rem}
+  footer a:hover{color:var(--green)}
+  .social{display:flex;gap:.8rem;align-items:center}
+  .social a{width:2rem;height:2rem;border-radius:50%;background:#ffffff22;display:grid;place-items:center;font-weight:700}
+
+  /* Tablet */
+  @media (max-width:960px){
+    .feature-grid,.plan-grid,.stat-grid{grid-template-columns:repeat(2,1fr)}
+    .hero .container,.about .container,.contact .container{grid-template-columns:1fr}
+    .hero{padding:3rem 0}
+  }
+  /* Mobile */
+  @media (max-width:680px){
+    .menu-btn{display:block}
+    nav{position:absolute;top:100%;left:0;right:0;background:var(--white);box-shadow:0 8px 12px rgba(0,0,0,.1);display:none}
+    nav.open{display:block}
+    nav ul{flex-direction:column;align-items:flex-start;gap:0;padding:.5rem 4%}
+    nav li{width:100%;padding:.6rem 0;border-bottom:1px solid #eef2f6}
+    .feature-grid,.plan-grid,.stat-grid{grid-template-columns:1fr}
+    .custom .container,footer .container{flex-direction:column;text-align:center}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">Nilo<span>Fibernet</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#" class="btn btn-green">Client Login</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div>
+        <h1>Thimphu's Trusted <em>Internet</em> Partner</h1>
+        <p>Nilo Fibernet provides high-speed, reliable and affordable internet to homes and businesses across Thimphu.</p>
+        <div class="actions">
+          <a href="#packages" class="btn btn-orange">Get Started</a>
+          <a href="#contact" class="btn btn-green">Check Coverage</a>
+        </div>
+      </div>
+      <!-- Replace src with your own router/hero image -->
+      <div class="media"><img src="images/hero-router.jpg" alt="Fiber internet router" onerror="this.style.display='none'"></div>
+    </div>
+  </section>
+
+  <section class="features" id="support">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature"><div class="icon">⚡</div><h3>High Speed</h3><p>Enjoy fast internet for streaming, gaming and working from home.</p></div>
+        <div class="feature"><div class="icon">📶</div><h3>Reliable Connection</h3><p>Stable, always-on fiber service you can count on.</p></div>
+        <div class="feature"><div class="icon">🎧</div><h3>Local Support</h3><p>Our Thimphu-based team is here when you need help.</p></div>
+        <div class="feature"><div class="icon">👛</div><h3>Affordable Plans</h3><p>Internet plans that fit every budget.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Internet Packages</h2>
+        <p>Choose a perfect plan for your home and business</p>
+      </div>
+      <div class="plan-grid">
+        <article class="plan">
+          <h3>Basic</h3><p class="sub">Perfect for budget users</p>
+          <p class="price">Nu. 500<small>/month</small></p>
+          <ul><li>5 Mbps</li><li>Unlimited data</li><li>24/7 support</li><li>Free installation</li></ul>
+          <a href="#contact" class="btn">Choose plan</a>
+        </article>
+        <article class="plan">
+          <h3>Standard</h3><p class="sub">Perfect for family use</p>
+          <p class="price">Nu. 800<small>/month</small></p>
+          <ul><li>Up to 10 Mbps</li><li>Unlimited data</li><li>24/7 support</li><li>Free installation</li></ul>
+          <a href="#contact" class="btn">Choose plan</a>
+        </article>
+        <article class="plan">
+          <h3>Premium</h3><p class="sub">Best for gaming and streaming</p>
+          <p class="price">Nu. 1,200<small>/month</small></p>
+          <ul><li>Up to 25 Mbps</li><li>Unlimited data</li><li>24/7 support</li><li>Free installation</li></ul>
+          <a href="#contact" class="btn">Choose plan</a>
+        </article>
+        <article class="plan">
+          <h3>Business</h3><p class="sub">Ideal for offices</p>
+          <p class="price">Nu. 2,500<small>/month</small></p>
+          <ul><li>Up to 50 Mbps</li><li>Unlimited data</li><li>Priority support</li><li>Free installation</li></ul>
+          <a href="#contact" class="btn">Choose plan</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="custom">
+    <div class="container">
+      <div>
+        <h3>Need a custom plan for your business?</h3>
+        <p>We provide custom internet solutions for offices and organizations.</p>
+      </div>
+      <a href="#contact" class="btn btn-green">Contact Us</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div>
+        <h2>About Nilo Fibernet</h2>
+        <p>Nilo Fibernet is a locally owned internet provider based in Thimphu, Bhutan. We are committed to delivering high-quality fiber internet to every home and business.</p>
+        <p>Our mission is simple: provide dependable internet with great value and support the digital future of Bhutan.</p>
+      </div>
+      <!-- Replace src with your team photo -->
+      <div class="media"><img src="images/team.jpg" alt="The Nilo Fibernet team" onerror="this.style.display='none'"></div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stat-grid">
+        <div class="stat"><div class="icon">☺</div><strong>2000+</strong><span>Happy customers</span></div>
+        <div class="stat"><div class="icon">〰</div><strong>100%</strong><span>Fiber optic cable</span></div>
+        <div class="stat"><div class="icon">⏱</div><strong>24/7</strong><span>Uptime guarantee</span></div>
+        <div class="stat"><div class="icon">👥</div><strong>Local</strong><span>Support team</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div>
+        <h2>Contact Us</h2>
+        <p>Reach out today and get in touch with our team.</p>
+        <ul class="info">
+          <li><span class="ic">✆</span><span>+975 17891881 / 77888888</span></li>
+          <li><span class="ic">✉</span><span>nilofibernet1193@gmail.com</span></li>
+          <li><span class="ic">⌖</span><span>Babesa, Thimphu, Bhutan</span></li>
+          <li><span class="ic">⏰</span><span>Mon – Sat, 9:00 am – 5:00 pm</span></li>
+        </ul>
+      </div>
+      <form id="contactForm" novalidate>
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit" class="btn btn-green">Send message</button>
+        <p class="form-msg" id="formMsg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <a href="tel:+97517891881">✆ 17891881 / 77888888</a>
+    <a href="mailto:nilofibernet1193@gmail.com">✉ nilofibernet1193@gmail.com</a>
+    <span>⌖ Babesa, Thimphu</span>
+    <div class="social">
+      <span>Follow us</span>
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Messenger">✉</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const btn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', e => { if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
+
+  // Contact form (front-end check only; connect to a backend or Formspree to actually send)
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target, msg = document.getElementById('formMsg');
+    if (!f.name.value.trim() || !f.email.validity.valid || !f.message.value.trim()) {
+      msg.style.color = '#c0392b';
+      msg.textContent = 'Please enter your name, a valid email and a message.';
+      return;
+    }
+    msg.style.color = '';
+    msg.textContent = 'Thanks! We will get back to you soon.';
+    f.reset();
+  });
+</script>
+</body>
+</html>
