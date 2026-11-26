@@ -1,0 +1,3447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GYELMO LUXE Salon| Babesa Thimphu, Bhutan</title>
+<meta name="description" content="Hair, skin, nails, makeup and bridal care in Thimphu, Bhutan.">
+
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --green:#1E4D45;
+    --green-d:#163A34;
+    --amber:#C8892B;
+    --bg:#F6F8F6;
+    --white:#fff;
+    --ink:#1F2A28;
+    --muted:#55635F;
+    --line:#D9E2DD;
+    --space:2rem;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:70px;
+}
+
+body{
+    font-family:Hind,"Segoe UI",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:1.05rem;
+}
+
+h1,h2,h3{
+    font-weight:600;
+    line-height:1.25;
+}
+
+a{
+    color:inherit;
+}
+
+:focus-visible{
+    outline:3px solid var(--amber);
+    outline-offset:3px;
+}
+
+.wrap{
+    width:min(1000px,92%);
+    margin-inline:auto;
+}
+
+section{
+    padding:4rem 0;
+}
+
+section.alt{
+    background:var(--white);
+}
+
+h2{
+    font-size:clamp(1.6rem,4vw,2.1rem);
+    color:var(--green);
+    margin-bottom:1rem;
+}
+
+h3{
+    font-size:1.2rem;
+    color:var(--green);
+    margin-bottom:.25rem;
+}
+
+p{
+    max-width:65ch;
+}
+
+p+p{
+    margin-top:1rem;
+}
+
+/* HEADER */
+header{
+    background:var(--green-d);
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1rem 0;
+}
+
+.logo{
+    font-size:1.25rem;
+    font-weight:600;
+    text-decoration:none;
+}
+
+nav ul{
+    display:flex;
+    gap:var(--space);
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    opacity:.9;
+}
+
+nav a:hover{
+    opacity:1;
+    text-decoration:underline;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    color:#fff;
+    border:1px solid #fff;
+    font:inherit;
+    padding:.3rem .8rem;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    background:var(--green);
+    color:#fff;
+    padding:5rem 0;
+}
+
+.hero h1{
+    font-size:clamp(2rem,5vw,3.2rem);
+    margin-bottom:1rem;
+    max-width:20ch;
+}
+
+.hero p{
+    font-size:1.1rem;
+    margin-bottom:var(--space);
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+
+.btn{
+    display:inline-block;
+    padding:.75rem 1.5rem;
+    font:600 1rem Hind,sans-serif;
+    text-decoration:none;
+    background:var(--amber);
+    color:var(--ink);
+    border:2px solid var(--amber);
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    filter:brightness(.92);
+}
+
+.btn.alt{
+    background:transparent;
+    color:#fff;
+    border-color:#fff;
+}
+
+.btn.alt:hover{
+    background:rgba(255,255,255,.12);
+    filter:none;
+}
+
+/* FACTS */
+.facts{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    padding:var(--space) 0;
+}
+
+.facts .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:var(--space);
+    text-align:center;
+}
+
+.facts strong{
+    display:block;
+    font-size:1.6rem;
+    color:var(--green);
+}
+
+.facts span{
+    font-size:.95rem;
+    color:var(--muted);
+}
+
+/* ABOUT */
+.two{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:var(--space);
+}
+
+.points{
+    display:grid;
+    gap:var(--space);
+    align-content:start;
+}
+
+/* SERVICES */
+.group{
+    margin-bottom:var(--space);
+}
+
+.group:last-child{
+    margin-bottom:0;
+}
+
+.group h3{
+    font-size:1.35rem;
+    padding-bottom:.5rem;
+    border-bottom:2px solid var(--green);
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:.2rem var(--space);
+    padding:1rem 0;
+    border-bottom:1px solid var(--line);
+}
+
+.row b{
+    font-weight:600;
+}
+
+.row .price{
+    font-weight:600;
+    color:var(--green);
+    white-space:nowrap;
+}
+
+.row small{
+    grid-column:1/-1;
+    font-size:.97rem;
+    color:var(--muted);
+}
+
+/* PACKAGES */
+.pkgs{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:var(--space);
+}
+
+.pkg{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:var(--space);
+}
+
+.pkg .big{
+    font-size:1.5rem;
+    font-weight:600;
+    color:var(--green);
+    margin:.25rem 0 1rem;
+}
+
+.pkg ul{
+    margin-left:1.2rem;
+}
+
+/* STEPS */
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:var(--space);
+    list-style:none;
+    counter-reset:n;
+}
+
+.steps h3::before{
+    counter-increment:n;
+    content:counter(n) ". ";
+}
+
+/* TEAM / REVIEWS */
+.team,
+.quotes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:var(--space);
+}
+
+blockquote cite{
+    display:block;
+    margin-top:.5rem;
+    font-style:normal;
+    font-weight:600;
+    color:var(--green);
+}
+
+/* FAQ */
+details{
+    border-bottom:1px solid var(--line);
+    padding:1rem 0;
+}
+
+details:first-of-type{
+    border-top:1px solid var(--line);
+}
+
+summary{
+    cursor:pointer;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--green);
+}
+
+details p{
+    margin-top:.5rem;
+}
+
+/* BOOKING */
+.book{
+    background:var(--green);
+    color:#fff;
+}
+
+.book h2{
+    color:#fff;
+}
+
+.book .two{
+    align-items:start;
+}
+
+.info{
+    margin-top:var(--space);
+}
+
+.info p{
+    margin:0 0 .25rem;
+}
+
+.info strong{
+    color:var(--amber);
+}
+
+form{
+    background:var(--white);
+    color:var(--ink);
+    padding:var(--space);
+    display:grid;
+    gap:1rem;
+    border-radius:6px;
+}
+
+label{
+    display:grid;
+    gap:.3rem;
+    font-weight:600;
+}
+
+input,
+select,
+textarea{
+    font:inherit;
+    padding:.65rem .75rem;
+    border:1px solid #b6c3bd;
+    background:#fff;
+    border-radius:4px;
+    width:100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--green);
+}
+
+.r2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+}
+
+form .btn{
+    background:var(--green);
+    color:#fff;
+    border-color:var(--green);
+}
+
+#msg{
+    min-height:1.5em;
+    font-weight:600;
+    color:var(--green);
+}
+
+/* FOOTER */
+footer{
+    background:var(--green-d);
+    color:#fff;
+    padding:3rem 0 1.5rem;
+    font-size:.95rem;
+}
+
+footer .cols{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:var(--space);
+    margin-bottom:var(--space);
+}
+
+footer h3{
+    color:#fff;
+    font-size:1.05rem;
+    margin-bottom:.5rem;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer a{
+    text-decoration:none;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
+
+footer .copy{
+    border-top:1px solid rgba(255,255,255,.2);
+    padding-top:1.5rem;
+    text-align:center;
+}
+
+/* RESPONSIVE */
+@media (max-width:860px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        position:absolute;
+        left:0;
+        right:0;
+        top:100%;
+        background:var(--green-d);
+        display:none;
+    }
+
+    nav.open{
+        display:block;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:0;
+        padding:0 4%;
+    }
+
+    nav a{
+        display:block;
+        padding:.8rem 0;
+        border-top:1px solid rgba(255,255,255,.15);
+    }
+
+    .two,
+    .pkgs,
+    .team,
+    .quotes,
+    footer .cols{
+        grid-template-columns:1fr;
+    }
+
+    .steps,
+    .facts .wrap{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media (max-width:480px){
+
+    .r2,
+    .steps{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="wrap bar">
+
+        <a class="logo" href="#top">
+            GYELMO LUXE Salon
+        </a>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="nav">
+            Menu
+        </button>
+
+        <nav id="nav" aria-label="Main">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#faq">Questions</a></li>
+                <li><a href="#book">Book</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+    <div class="wrap">
+
+        <h1>
+            Hair, skin and bridal care in Thimphu
+        </h1>
+
+        <p>
+            A calm, clean salon where every appointment gets
+            the time it needs. We use local herbs and gentle
+            techniques, and we listen before we begin.
+        </p>
+
+        <div class="actions">
+            <a class="btn" href="#book">
+                Book an appointment
+            </a>
+
+            <a class="btn alt" href="#services">
+                See prices
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- FACTS -->
+<div class="facts">
+    <div class="wrap">
+
+        <div>
+            <strong>10+</strong>
+            <span>Years in Thimphu</span>
+        </div>
+
+        <div>
+            <strong>6</strong>
+            <span>Trained stylists</span>
+        </div>
+
+        <div>
+            <strong>20+</strong>
+            <span>Services</span>
+        </div>
+
+        <div>
+            <strong>7 days</strong>
+            <span>Open every week</span>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="wrap two">
+
+        <div>
+
+            <h2>About the salon</h2>
+
+            <p>
+                GYELMO LUXE Salon began with one chair and a
+                simple idea: beauty care should feel like visiting
+                a friend's home. Today we are a team of six,
+                serving families, students, office workers and
+                brides from across Thimphu and nearby valleys.
+            </p>
+
+            <p>
+                Our stylists trained in Bhutan and abroad, and
+                they still learn from the herbal knowledge passed
+                down in their own families.
+            </p>
+
+            <p>
+                We keep appointments unhurried, and we never
+                push products you do not need.
+            </p>
+
+        </div>
+
+
+        <div class="points">
+
+            <div>
+                <h3>Local ingredients</h3>
+                <p>
+                    Herbal masks, oils and rinses made with
+                    plants from the region.
+                </p>
+            </div>
+
+            <div>
+                <h3>Clean and careful</h3>
+                <p>
+                    Every tool is sterilised, and every guest
+                    gets fresh towels and capes.
+                </p>
+            </div>
+
+            <div>
+                <h3>Honest advice</h3>
+                <p>
+                    We tell you what will work for your hair
+                    and skin, and what will not.
+                </p>
+            </div>
+
+            <div>
+                <h3>Fair prices</h3>
+                <p>
+                    Clear prices on this page. No surprise
+                    charges at the counter.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section id="services" class="alt">
+
+    <div class="wrap">
+
+        <h2>Services and prices</h2>
+
+        <p class="intro">
+            All prices are in Ngultrum (Nu.). Final prices for
+            colour and long hair are confirmed after a short
+            consultation.
+        </p>
+
+
+        <div class="group">
+
+            <h3>Hair</h3>
+
+            <div class="row">
+                <b>Haircut and styling</b>
+                <span class="price">Nu. 600</span>
+                <small>
+                    Wash, cut and blow-dry for all hair lengths.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Children's haircut</b>
+                <span class="price">Nu. 300</span>
+                <small>
+                    For children under 12.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Hair colour</b>
+                <span class="price">from Nu. 2,500</span>
+                <small>
+                    Full colour, highlights or root touch-up.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Herbal hair spa</b>
+                <span class="price">Nu. 1,500</span>
+                <small>
+                    Scalp massage and deep-conditioning mask.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Hair straightening</b>
+                <span class="price">from Nu. 4,000</span>
+                <small>
+                    Smooth, shiny hair that lasts for months.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Blow-dry and set</b>
+                <span class="price">Nu. 500</span>
+                <small>
+                    For events and special days.
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="group">
+
+            <h3>Skin</h3>
+
+            <div class="row">
+                <b>Basic facial</b>
+                <span class="price">Nu. 1,200</span>
+                <small>
+                    Cleansing, steam, light massage and moisturiser.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Herbal facial</b>
+                <span class="price">Nu. 1,800</span>
+                <small>
+                    A deeper treatment using sea buckthorn
+                    and mountain herbs.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Hot stone massage</b>
+                <span class="price">Nu. 2,500</span>
+                <small>
+                    60 minutes for back and shoulders.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Full body massage</b>
+                <span class="price">Nu. 3,000</span>
+                <small>
+                    90 minutes with warm herbal oil.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Threading and waxing</b>
+                <span class="price">from Nu. 150</span>
+                <small>
+                    Eyebrows, upper lip, face, arms and legs.
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="group">
+
+            <h3>Nails</h3>
+
+            <div class="row">
+                <b>Manicure</b>
+                <span class="price">Nu. 500</span>
+                <small>
+                    Shaping, cuticle care, hand massage and polish.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Pedicure</b>
+                <span class="price">Nu. 600</span>
+                <small>
+                    Foot soak, scrub, shaping, massage and polish.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Manicure and pedicure</b>
+                <span class="price">Nu. 900</span>
+                <small>
+                    Both together at a saving.
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="group">
+
+            <h3>Makeup</h3>
+
+            <div class="row">
+                <b>Party makeup</b>
+                <span class="price">Nu. 1,800</span>
+                <small>
+                    For birthdays, festivals and evenings out.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Makeup lesson</b>
+                <span class="price">Nu. 2,000</span>
+                <small>
+                    One hour to learn a look you can do yourself.
+                </small>
+            </div>
+
+            <div class="row">
+                <b>Bridal makeup and hair</b>
+                <span class="price">from Nu. 6,000</span>
+                <small>
+                    See the bridal package below.
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PACKAGES -->
+<section id="packages">
+
+    <div class="wrap">
+
+        <h2>Packages</h2>
+
+        <p class="intro">
+            Combine services and save. Ask us to adjust
+            any package to suit you.
+        </p>
+
+        <div class="pkgs">
+
+            <div class="pkg">
+                <h3>Refresh</h3>
+
+                <div class="big">
+                    Nu. 2,000
+                </div>
+
+                <ul>
+                    <li>Haircut and styling</li>
+                    <li>Basic facial</li>
+                    <li>Manicure</li>
+                </ul>
+            </div>
+
+
+            <div class="pkg">
+                <h3>Relax</h3>
+
+                <div class="big">
+                    Nu. 5,500
+                </div>
+
+                <ul>
+                    <li>Herbal hair spa</li>
+                    <li>Herbal facial</li>
+                    <li>Hot stone massage</li>
+                    <li>Manicure and pedicure</li>
+                </ul>
+            </div>
+
+
+            <div class="pkg">
+                <h3>Bride</h3>
+
+                <div class="big">
+                    from Nu. 6,000
+                </div>
+
+                <ul>
+                    <li>Trial session</li>
+                    <li>Bridal makeup and hair</li>
+                    <li>Help with dressing</li>
+                    <li>Touch-up kit</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="alt">
+
+    <div class="wrap">
+
+        <h2>How an appointment works</h2>
+
+        <p class="intro">
+            We keep it simple, so you always know what to expect.
+        </p>
+
+        <ol class="steps">
+
+            <li>
+                <h3>Book</h3>
+                <p>
+                    Call us or send a request using the form below.
+                </p>
+            </li>
+
+            <li>
+                <h3>Talk</h3>
+                <p>
+                    We ask about your hair, skin and what you want.
+                </p>
+            </li>
+
+            <li>
+                <h3>Treat</h3>
+                <p>
+                    Your stylist works at a relaxed pace.
+                </p>
+            </li>
+
+            <li>
+                <h3>Follow up</h3>
+                <p>
+                    We share care tips and tell you when to come back.
+                </p>
+            </li>
+
+        </ol>
+
+    </div>
+
+</section>
+
+
+<!-- TEAM -->
+<section id="team">
+
+    <div class="wrap">
+
+        <h2>Our team</h2>
+
+        <p class="intro">
+            Six trained stylists, each with their own speciality.
+        </p>
+
+        <div class="team">
+
+            <div>
+                <h3>Senior hair stylist</h3>
+                <p>
+                    Cuts, colour and straightening.
+                    Over ten years of experience.
+                </p>
+            </div>
+
+            <div>
+                <h3>Skin therapist</h3>
+                <p>
+                    Facials, massage and herbal treatments.
+                </p>
+            </div>
+
+            <div>
+                <h3>Bridal artist</h3>
+                <p>
+                    Makeup and hair for weddings.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+<section class="alt">
+
+    <div class="wrap">
+
+        <h2>What guests say</h2>
+
+        <div class="quotes">
+
+            <blockquote>
+                The herbal facial was the best I have had.
+                My skin felt soft for days.
+                <cite>Guest from Thimphu</cite>
+            </blockquote>
+
+            <blockquote>
+                They did my sister's wedding hair and makeup.
+                Everyone stayed calm and on time.
+                <cite>Guest from Paro</cite>
+            </blockquote>
+
+            <blockquote>
+                Clean, quiet and fair prices.
+                I now bring my mother and my daughter.
+                <cite>Guest from Thimphu</cite>
+            </blockquote>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+<section id="faq">
+
+    <div class="wrap">
+
+        <h2>Common questions</h2>
+
+        <details>
+            <summary>Do I need to book in advance?</summary>
+            <p>
+                We welcome walk-ins when there is space,
+                but booking is best.
+            </p>
+        </details>
+
+        <details>
+            <summary>How long does a visit take?</summary>
+            <p>
+                A haircut takes about 45 minutes.
+                Facials take about an hour.
+            </p>
+        </details>
+
+        <details>
+            <summary>Can I cancel or change my booking?</summary>
+            <p>
+                Yes. Please call us at least one day before.
+            </p>
+        </details>
+
+        <details>
+            <summary>Do you offer bridal services at home?</summary>
+            <p>
+                Yes, within Thimphu.
+            </p>
+        </details>
+
+        <details>
+            <summary>
+                Are your products safe for sensitive skin?
+            </summary>
+            <p>
+                We use gentle products and can do a small
+                patch test first.
+            </p>
+        </details>
+
+        <details>
+            <summary>How can I pay?</summary>
+            <p>
+                We accept cash and mobile banking transfers.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- BOOKING -->
+<section class="book" id="book">
+
+    <div class="wrap two">
+
+        <div>
+
+            <h2>Book an appointment</h2>
+
+            <p>
+                Tell us what you would like and when.
+                We will call you to confirm the time.
+            </p>
+
+            <div class="info">
+
+                <p>
+                    <strong>Address:</strong>
+                    Babesa Express Highway, Thimphu
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <a href="tel:+97517838997">
+                        +975 17 83 89 97
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Monday to Saturday:</strong>
+                    9:00 am to 8:00 pm
+                </p>
+
+                <p>
+                    <strong>Sunday:</strong>
+                    10:00 am to 5:00 pm
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="bookForm">
+
+            <label>
+                Your name
+                <input
+                    type="text"
+                    id="name"
+                    required
+                    autocomplete="name">
+            </label>
+
+            <label>
+                Phone number
+                <input
+                    type="tel"
+                    id="phone"
+                    required
+                    autocomplete="tel">
+            </label>
+
+            <div class="r2">
+
+                <label>
+                    Service
+
+                    <select id="service" required>
+
+                        <option value="">
+                            Choose a service
+                        </option>
+
+                        <option>Haircut and styling</option>
+                        <option>Hair colour</option>
+                        <option>Herbal hair spa</option>
+                        <option>Basic facial</option>
+                        <option>Herbal facial</option>
+                        <option>Hot stone massage</option>
+                        <option>Manicure and pedicure</option>
+                        <option>Party makeup</option>
+                        <option>Bridal package</option>
+                        <option>Refresh package</option>
+                        <option>Relax package</option>
+
+                    </select>
+                </label>
+
+
+                <label>
+                    Preferred date
+                    <input
+                        type="date"
+                        id="date"
+                        required>
+                </label>
+
+            </div>
+
+
+            <label>
+                Notes (optional)
+                <textarea
+                    id="notes"
+                    rows="3"></textarea>
+            </label>
+
+
+            <button
+                class="btn"
+                type="submit">
+                Request appointment
+            </button>
+
+            <div
+                id="msg"
+                role="status"
+                aria-live="polite">
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="wrap">
+
+        <div class="cols">
+
+            <div>
+                <h3>GYELMO LUXE Salon</h3>
+                <p>
+                    Hair, skin, nails, makeup and bridal care
+                    in Thimphu, Bhutan.
+                </p>
+            </div>
+
+
+            <div>
+
+                <h3>Pages</h3>
+
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#faq">Questions</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <ul>
+                    <li>Babesa Express Highway, Thimphu</li>
+
+                    <li>
+                        <a href="tel:+97517838997">
+                            +975 17 83 89 97
+                        </a>
+                    </li>
+
+                    <li>Open 7 days</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copy">
+            &copy;
+            <span id="yr"></span>
+            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>GUELMO LUXE Salon | Thimphu,Babesa Bhutan</title>
+
+    <meta name="description"
+          content="Hair, skin, nails, makeup and bridal care in Thimphu, Babesa.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Hind:wght@400;600&display=swap"
+          rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --nude: #F7EAE5;
+    --nude-2: #EFD6CF;
+    --white: #FFFAF8;
+    --ink: #3B2A2C;
+
+    --rose: #B76E79;
+    --rose-d: #A25A66;
+    --rose-text: #8A4452;
+
+    --line: #E6CFC8;
+
+    --space: clamp(3rem, 7vw, 5rem);
+    --gap: 2rem;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: Hind, "Segoe UI", sans-serif;
+    background: var(--nude);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Yatra One", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+}
+
+.wrap {
+    width: min(1000px, 92%);
+    margin: auto;
+}
+
+section,
+.hero,
+.facts {
+    padding: var(--space) 0;
+}
+
+section.alt {
+    background: var(--white);
+}
+
+h2 {
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    color: var(--rose-text);
+    margin-bottom: .6rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--rose-text);
+    margin-bottom: .3rem;
+}
+
+p {
+    max-width: 65ch;
+}
+
+p + p {
+    margin-top: .9rem;
+}
+
+.intro {
+    margin-bottom: var(--gap);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: var(--white);
+    color: var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 3px solid var(--rose);
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .7rem 0;
+}
+
+.logo {
+    font-family: "Yatra One", serif;
+    font-size: 1.35rem;
+    text-decoration: none;
+    color: var(--rose-text);
+}
+
+nav ul {
+    display: flex;
+    gap: 1.3rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding: .2rem 0;
+}
+
+nav a:hover {
+    border-color: var(--rose);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: var(--rose-text);
+    border: 2px solid var(--rose);
+    font: inherit;
+    padding: .3rem .8rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background: var(--nude-2);
+    color: var(--ink);
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    margin-bottom: 1rem;
+    max-width: 18ch;
+    color: var(--rose-text);
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin-bottom: 1.6rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: .8rem 1.6rem;
+    font: 600 1rem Hind, sans-serif;
+    text-decoration: none;
+    background: var(--rose-d);
+    color: #fff;
+    border: 2px solid var(--rose-d);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--rose-d);
+}
+
+.btn.alt {
+    background: transparent;
+    color: var(--rose-d);
+    margin-left: .6rem;
+}
+
+.btn.alt:hover {
+    background: var(--rose-d);
+    color: #fff;
+}
+
+
+/* =========================
+   FACTS
+========================= */
+
+.facts {
+    background: var(--rose-d);
+    color: #fff;
+}
+
+.facts .wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    text-align: center;
+}
+
+.facts strong {
+    display: block;
+    font-family: "Yatra One", serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #FBE3DC;
+}
+
+.facts span {
+    font-size: .95rem;
+}
+
+
+/* =========================
+   TWO COLUMN
+========================= */
+
+.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+}
+
+.points {
+    display: grid;
+    gap: var(--gap);
+    align-content: start;
+}
+
+.points div {
+    border-left: 4px solid var(--rose);
+    padding-left: 1rem;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.group {
+    margin-bottom: var(--gap);
+}
+
+.group:last-child {
+    margin-bottom: 0;
+}
+
+.group h3 {
+    font-size: 1.5rem;
+    padding-bottom: .4rem;
+    border-bottom: 2px solid var(--rose);
+    margin-bottom: .4rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .2rem 1.5rem;
+    padding: .9rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.row b {
+    font-weight: 600;
+}
+
+.row .price {
+    font-weight: 600;
+    color: var(--rose-text);
+    white-space: nowrap;
+}
+
+.row small {
+    grid-column: 1 / -1;
+    font-size: .97rem;
+    color: #6b5558;
+}
+
+
+/* =========================
+   PACKAGES
+========================= */
+
+.pkgs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+}
+
+.pkg {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 1.5rem;
+}
+
+.pkg .big {
+    font-family: "Yatra One", serif;
+    font-size: 1.8rem;
+    color: var(--rose-text);
+    margin: .3rem 0 .8rem;
+}
+
+.pkg ul {
+    list-style: none;
+}
+
+.pkg li {
+    padding: .3rem 0 .3rem 1.2rem;
+    position: relative;
+}
+
+.pkg li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .95rem;
+    width: 6px;
+    height: 6px;
+    background: var(--rose);
+    border-radius: 50%;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    list-style: none;
+}
+
+.steps li {
+    border-top: 4px solid var(--rose);
+    padding-top: .8rem;
+}
+
+
+/* =========================
+   TEAM
+========================= */
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+.quotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+}
+
+blockquote {
+    border-left: 4px solid var(--rose);
+    padding-left: 1rem;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: .5rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--rose-text);
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+details {
+    border-bottom: 1px solid var(--line);
+    padding: 1rem 0;
+}
+
+details:first-of-type {
+    border-top: 1px solid var(--line);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--rose-text);
+}
+
+details p {
+    margin-top: .6rem;
+}
+
+
+/* =========================
+   BOOKING
+========================= */
+
+.book {
+    background: var(--nude-2);
+    color: var(--ink);
+}
+
+.book .two {
+    align-items: start;
+}
+
+.info {
+    margin-top: 1.4rem;
+}
+
+.info p {
+    margin: 0 0 .3rem;
+}
+
+.info strong {
+    color: var(--rose-text);
+}
+
+form {
+    background: var(--white);
+    color: var(--ink);
+    padding: 1.6rem;
+    display: grid;
+    gap: 1rem;
+    border-top: 6px solid var(--rose);
+}
+
+label {
+    display: grid;
+    gap: .3rem;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    font: inherit;
+    padding: .65rem .75rem;
+    border: 2px solid #cdb0a8;
+    background: #fff;
+    border-radius: 3px;
+    width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--rose-d);
+}
+
+.r2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#msg {
+    min-height: 1.5em;
+    font-weight: 600;
+    color: var(--rose-text);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--white);
+    color: var(--ink);
+    padding: var(--space) 0 1.5rem;
+    font-size: .95rem;
+    border-top: 3px solid var(--rose);
+}
+
+footer .cols {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+footer h3 {
+    font-size: 1.1rem;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .copy {
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+    text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 860px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: var(--white);
+        display: none;
+        border-bottom: 3px solid var(--rose);
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: .4rem 4%;
+    }
+
+    nav a {
+        display: block;
+        padding: .75rem 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .two,
+    .pkgs,
+    .team,
+    .quotes,
+    footer .cols {
+        grid-template-columns: 1fr;
+    }
+
+    .steps,
+    .facts .wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn.alt {
+        margin: .6rem 0 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .r2,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="wrap bar">
+
+        <a class="logo" href="#top">
+            Lotus Beauty Salon
+        </a>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="nav">
+
+            Menu
+
+        </button>
+
+        <nav id="nav" aria-label="Main">
+
+            <ul>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#packages">Packages</a>
+                </li>
+
+                <li>
+                    <a href="#team">Team</a>
+                </li>
+
+                <li>
+                    <a href="#faq">Questions</a>
+                </li>
+
+                <li>
+                    <a href="#book">Book</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main id="top">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+    <div class="wrap">
+
+        <h1>
+            Hair, skin and bridal care in Thimphu,Babesa
+        </h1>
+
+        <p>
+            A calm, clean salon where every appointment gets
+            the time it needs. We use local herbs and gentle
+            techniques, and we listen before we begin.
+        </p>
+
+        <a class="btn" href="#book">
+            Book an appointment
+        </a>
+
+        <a class="btn alt" href="#services">
+            See prices
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FACTS
+========================= -->
+
+<div class="facts">
+
+    <div class="wrap">
+
+        <div>
+            <strong>10+</strong>
+            <span>Years in Thimphu</span>
+        </div>
+
+        <div>
+            <strong>6</strong>
+            <span>Trained stylists</span>
+        </div>
+
+        <div>
+            <strong>20+</strong>
+            <span>Services</span>
+        </div>
+
+        <div>
+            <strong>7 days</strong>
+            <span>Open every week</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="wrap two">
+
+        <div>
+
+            <h2>
+                About the salon
+            </h2>
+
+            <p>
+                GYELMO LUXE Salon began with one chair and
+                a simple idea: beauty care should feel like
+                visiting a friend's home. Today we are a team
+                of six, serving families, students, office
+                workers and brides from across Thimphu and
+                nearby valleys.
+            </p>
+
+            <p>
+                Our stylists trained in Bhutan and abroad,
+                and they still learn from the herbal knowledge
+                passed down in their own families.
+            </p>
+
+            <p>
+                We combine modern technique with ingredients
+                that grow in our mountains, such as sea
+                buckthorn, lemongrass and honey.
+            </p>
+
+            <p>
+                We keep appointments unhurried, and we never
+                push products you do not need.
+            </p>
+
+        </div>
+
+
+        <div class="points">
+
+            <div>
+
+                <h3>
+                    Local ingredients
+                </h3>
+
+                <p>
+                    Herbal masks, oils and rinses made with
+                    plants from the region.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Clean and careful
+                </h3>
+
+                <p>
+                    Every tool is sterilised, and every guest
+                    gets fresh towels and capes.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Honest advice
+                </h3>
+
+                <p>
+                    We tell you what will work for your hair
+                    and skin, and what will not.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Fair prices
+                </h3>
+
+                <p>
+                    Clear prices on this page. No surprise
+                    charges at the counter.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services" class="alt">
+
+    <div class="wrap">
+
+        <h2>
+            Services and prices
+        </h2>
+
+        <p class="intro">
+            All prices are in Ngultrum (Nu.). Final prices
+            for colour and long hair are confirmed after
+            a short consultation.
+        </p>
+
+
+        <!-- HAIR -->
+
+        <div class="group">
+
+            <h3>
+                Hair
+            </h3>
+
+            <div class="row">
+
+                <b>
+                    Haircut and styling
+                </b>
+
+                <span class="price">
+                    Nu. 600
+                </span>
+
+                <small>
+                    Wash, cut and blow-dry for all hair lengths.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Children's haircut
+                </b>
+
+                <span class="price">
+                    Nu. 300
+                </span>
+
+                <small>
+                    For children under 12.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Hair colour
+                </b>
+
+                <span class="price">
+                    from Nu. 2,500
+                </span>
+
+                <small>
+                    Full colour, highlights or root touch-up.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Herbal hair spa
+                </b>
+
+                <span class="price">
+                    Nu. 1,500
+                </span>
+
+                <small>
+                    Scalp massage and a deep-conditioning
+                    mask with lemongrass and local oils.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Hair straightening
+                </b>
+
+                <span class="price">
+                    from Nu. 4,000
+                </span>
+
+                <small>
+                    Smooth, shiny hair that lasts for months.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Blow-dry and set
+                </b>
+
+                <span class="price">
+                    Nu. 500
+                </span>
+
+                <small>
+                    For events and special days.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- SKIN -->
+
+        <div class="group">
+
+            <h3>
+                Skin
+            </h3>
+
+            <div class="row">
+
+                <b>
+                    Basic facial
+                </b>
+
+                <span class="price">
+                    Nu. 1,200
+                </span>
+
+                <small>
+                    Cleansing, steam, light massage and
+                    moisturiser.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Herbal facial
+                </b>
+
+                <span class="price">
+                    Nu. 1,800
+                </span>
+
+                <small>
+                    A deeper treatment using sea buckthorn
+                    and mountain herbs.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Hot stone massage
+                </b>
+
+                <span class="price">
+                    Nu. 2,500
+                </span>
+
+                <small>
+                    60 minutes for back and shoulders.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Full body massage
+                </b>
+
+                <span class="price">
+                    Nu. 3,000
+                </span>
+
+                <small>
+                    90 minutes with warm herbal oil.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Threading and waxing
+                </b>
+
+                <span class="price">
+                    from Nu. 150
+                </span>
+
+                <small>
+                    Eyebrows, upper lip, face, arms and legs.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAILS -->
+
+        <div class="group">
+
+            <h3>
+                Nails
+            </h3>
+
+            <div class="row">
+
+                <b>
+                    Manicure
+                </b>
+
+                <span class="price">
+                    Nu. 500
+                </span>
+
+                <small>
+                    Shaping, cuticle care, hand massage and
+                    polish.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Pedicure
+                </b>
+
+                <span class="price">
+                    Nu. 600
+                </span>
+
+                <small>
+                    Foot soak, scrub, shaping, massage and
+                    polish.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Manicure and pedicure
+                </b>
+
+                <span class="price">
+                    Nu. 900
+                </span>
+
+                <small>
+                    Both together at a saving.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAKEUP -->
+
+        <div class="group">
+
+            <h3>
+                Makeup
+            </h3>
+
+            <div class="row">
+
+                <b>
+                    Party makeup
+                </b>
+
+                <span class="price">
+                    Nu. 1,800
+                </span>
+
+                <small>
+                    For birthdays, festivals and evenings out.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Makeup lesson
+                </b>
+
+                <span class="price">
+                    Nu. 2,000
+                </span>
+
+                <small>
+                    One hour to learn a look you can do yourself.
+                </small>
+
+            </div>
+
+
+            <div class="row">
+
+                <b>
+                    Bridal makeup and hair
+                </b>
+
+                <span class="price">
+                    from Nu. 6,000
+                </span>
+
+                <small>
+                    See the bridal package below.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PACKAGES
+========================= -->
+
+<section id="packages">
+
+    <div class="wrap">
+
+        <h2>
+            Packages
+        </h2>
+
+        <p class="intro">
+            Combine services and save. Ask us to adjust
+            any package to suit you.
+        </p>
+
+
+        <div class="pkgs">
+
+
+            <div class="pkg">
+
+                <h3>
+                    Refresh
+                </h3>
+
+                <div class="big">
+                    Nu. 2,000
+                </div>
+
+                <ul>
+
+                    <li>
+                        Haircut and styling
+                    </li>
+
+                    <li>
+                        Basic facial
+                    </li>
+
+                    <li>
+                        Manicure
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="pkg">
+
+                <h3>
+                    Relax
+                </h3>
+
+                <div class="big">
+                    Nu. 5,500
+                </div>
+
+                <ul>
+
+                    <li>
+                        Herbal hair spa
+                    </li>
+
+                    <li>
+                        Herbal facial
+                    </li>
+
+                    <li>
+                        Hot stone massage
+                    </li>
+
+                    <li>
+                        Manicure and pedicure
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="pkg">
+
+                <h3>
+                    Bride
+                </h3>
+
+                <div class="big">
+                    from Nu. 6,000
+                </div>
+
+                <ul>
+
+                    <li>
+                        Trial session two weeks before
+                    </li>
+
+                    <li>
+                        Bridal makeup and hair
+                    </li>
+
+                    <li>
+                        Help with dressing and jewellery
+                    </li>
+
+                    <li>
+                        Touch-up kit for the day
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     APPOINTMENT STEPS
+========================= -->
+
+<section class="alt">
+
+    <div class="wrap">
+
+        <h2>
+            How an appointment works
+        </h2>
+
+        <p class="intro">
+            We keep it simple, so you always know what
+            to expect.
+        </p>
+
+
+        <ol class="steps">
+
+            <li>
+
+                <h3>
+                    Book
+                </h3>
+
+                <p>
+                    Call us or send a request using the
+                    form below.
+                </p>
+
+            </li>
+
+
+            <li>
+
+                <h3>
+                    Talk
+                </h3>
+
+                <p>
+                    We ask about your hair, skin and
+                    what you want.
+                </p>
+
+            </li>
+
+
+            <li>
+
+                <h3>
+                    Treat
+                </h3>
+
+                <p>
+                    Your stylist works at a relaxed pace
+                    and explains each step.
+                </p>
+
+            </li>
+
+
+            <li>
+
+                <h3>
+                    Follow up
+                </h3>
+
+                <p>
+                    We share care tips and tell you
+                    when to come back.
+                </p>
+
+            </li>
+
+        </ol>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TEAM
+========================= -->
+
+<section id="team">
+
+    <div class="wrap">
+
+        <h2>
+            Our team
+        </h2>
+
+        <p class="intro">
+            Six trained stylists, each with their own
+            speciality.
+        </p>
+
+
+        <div class="team">
+
+
+            <div>
+
+                <h3>
+                    Senior hair stylist
+                </h3>
+
+                <p>
+                    Cuts, colour and straightening.
+                    Over ten years of experience.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Skin therapist
+                </h3>
+
+                <p>
+                    Facials, massage and herbal treatments.
+                    Trained in Bhutan and abroad.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Bridal artist
+                </h3>
+
+                <p>
+                    Makeup and hair for weddings,
+                    with trials and on-the-day support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="alt">
+
+    <div class="wrap">
+
+        <h2>
+            What guests say
+        </h2>
+
+        <p class="intro">
+            Kind words from people who visit us.
+        </p>
+
+
+        <div class="quotes">
+
+
+            <blockquote>
+
+                The herbal facial was the best I have had.
+                My skin felt soft for days.
+
+                <cite>
+                    Guest from Thimphu
+                </cite>
+
+            </blockquote>
+
+
+            <blockquote>
+
+                They did my sister's wedding hair and
+                makeup. Everyone stayed calm and on time.
+
+                <cite>
+                    Guest from Paro
+                </cite>
+
+            </blockquote>
+
+
+            <blockquote>
+
+                Clean, quiet and fair prices. I now bring
+                my mother and my daughter.
+
+                <cite>
+                    Guest from Thimphu
+                </cite>
+
+            </blockquote>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section id="faq">
+
+    <div class="wrap">
+
+        <h2>
+            Common questions
+        </h2>
+
+        <p class="intro">
+            Answers to what guests ask most.
+        </p>
+
+
+        <details>
+
+            <summary>
+                Do I need to book in advance?
+            </summary>
+
+            <p>
+                We welcome walk-ins when there is space,
+                but booking is best, especially on weekends
+                and before festivals.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                How long does a visit take?
+            </summary>
+
+            <p>
+                A haircut takes about 45 minutes. Facials
+                take about an hour. Colour and bridal
+                services take longer.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Can I cancel or change my booking?
+            </summary>
+
+            <p>
+                Yes. Please call us at least one day before
+                so we can offer the time to another guest.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Do you offer bridal services at home?
+            </summary>
+
+            <p>
+                Yes, within Thimphu. Travel costs depend
+                on the location and time of day.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Are your products safe for sensitive skin?
+            </summary>
+
+            <p>
+                We use gentle products and can do a small
+                patch test first. Please tell us about any
+                allergies before your treatment.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                How can I pay?
+            </summary>
+
+            <p>
+                We accept cash and mobile banking transfers.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOKING
+========================= -->
+
+<section class="book" id="book">
+
+    <div class="wrap two">
+
+
+        <div>
+
+            <h2>
+                Book an appointment
+            </h2>
+
+            <p>
+                Tell us what you would like and when.
+                We will call you to confirm the time.
+            </p>
+
+
+            <div class="info">
+
+                <p>
+                    <strong>Address:</strong>
+                    Babesa Express Highway, Thimphu
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+
+                    <a href="tel:+97517838997">
+                        +975 17 83 89 97
+                    </a>
+
+                </p>
+
+                <p>
+                    <strong>Monday to Saturday:</strong>
+                    9:00 am to 8:00 pm
+                </p>
+
+                <p>
+                    <strong>Sunday:</strong>
+                    10:00 am to 5:00 pm
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="bookForm">
+
+
+            <label>
+
+                Your name
+
+                <input
+                    type="text"
+                    id="name"
+                    required
+                    autocomplete="name">
+
+            </label>
+
+
+            <label>
+
+                Phone number
+
+                <input
+                    type="tel"
+                    id="phone"
+                    required
+                    autocomplete="tel">
+
+            </label>
+
+
+            <div class="r2">
+
+
+                <label>
+
+                    Service
+
+                    <select id="service" required>
+
+                        <option value="">
+                            Choose a service
+                        </option>
+
+                        <option>
+                            Haircut and styling
+                        </option>
+
+                        <option>
+                            Hair colour
+                        </option>
+
+                        <option>
+                            Herbal hair spa
+                        </option>
+
+                        <option>
+                            Basic facial
+                        </option>
+
+                        <option>
+                            Herbal facial
+                        </option>
+
+                        <option>
+                            Hot stone massage
+                        </option>
+
+                        <option>
+                            Manicure and pedicure
+                        </option>
+
+                        <option>
+                            Party makeup
+                        </option>
+
+                        <option>
+                            Bridal package
+                        </option>
+
+                        <option>
+                            Refresh package
+                        </option>
+
+                        <option>
+                            Relax package
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+
+                    Preferred date
+
+                    <input
+                        type="date"
+                        id="date"
+                        required>
+
+                </label>
+
+            </div>
+
+
+            <label>
+
+                Notes (optional)
+
+                <textarea
+                    id="notes"
+                    rows="3">
+                </textarea>
+
+            </label>
+
+
+            <button
+                class="btn"
+                type="submit">
+
+                Request appointment
+
+            </button>
+
+
+            <div
+                id="msg"
+                role="status"
+                aria-live="polite">
+            </div>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="wrap">
+
+        <div class="cols">
+
+
+            <div>
+
+                <h3>
+                    GYELMO LUXE Salon
+                </h3>
+
+                <p>
+                    Luxury Beauty & Hair Studio.
+					
+					Where Elegance Meets Beauty
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Pages
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#packages">
+                            Packages
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#faq">
+                            Questions
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Babesa Express Highway, Thimphu
+                    </li>
+
+                    <li>
+
+                        <a href="tel:+97517838997">
+                            +975 17 83 89 97
+                        </a>
+
+                    </li>
+
+                    <li>
+                        Open 7 days
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copy">
+
+            &copy;
+            <span id="yr"></span>
+            GYELMO LUXE Salon.
+            All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const btn =
+    document.getElementById("menuBtn");
+
+const nav =
+    document.getElementById("nav");
+
+
+btn.addEventListener("click", () => {
+
+    const open =
+        nav.classList.toggle("open");
+
+    btn.setAttribute(
+        "aria-expanded",
+        open
+    );
+
+});
+
+
+nav.addEventListener("click", (e) => {
+
+    if (e.target.tagName === "A") {
+
+        nav.classList.remove("open");
+
+        btn.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+});
+
+
+/* =========================
+   MINIMUM BOOKING DATE
+========================= */
+
+document.getElementById("date").min =
+    new Date()
+    .toISOString()
+    .split("T")[0];
+
+
+/* =========================
+   BOOKING FORM
+========================= */
+
+document
+    .getElementById("bookForm")
+    .addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+        const name =
+            document
+            .getElementById("name")
+            .value
+            .trim();
+
+        const service =
+            document
+            .getElementById("service")
+            .value;
+
+        document
+            .getElementById("msg")
+            .textContent =
+            "Thank you, " +
+            name +
+            ". We received your request for " +
+            service +
+            " and will call you to confirm.";
+
+        e.target.reset();
+
+    });
+
+
+/* =========================
+   COPYRIGHT YEAR
+========================= */
+
+document
+    .getElementById("yr")
+    .textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html> Salon.
+            All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* MOBILE MENU */
+
+const btn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+
+btn.addEventListener('click', () => {
+
+    const open =
+        nav.classList.toggle('open');
+
+    btn.setAttribute(
+        'aria-expanded',
+        open
+    );
+
+});
+
+
+nav.addEventListener('click', e => {
+
+    if(e.target.tagName === 'A'){
+
+        nav.classList.remove('open');
+
+        btn.setAttribute(
+            'aria-expanded',
+            false
+        );
+
+    }
+
+});
+
+
+/* MINIMUM BOOKING DATE */
+
+document.getElementById('date').min =
+    new Date().toISOString().split('T')[0];
+
+
+/* BOOKING FORM */
+
+document
+    .getElementById('bookForm')
+    .addEventListener('submit', e => {
+
+        e.preventDefault();
+
+        const name =
+            document.getElementById('name')
+            .value.trim();
+
+        const service =
+            document.getElementById('service')
+            .value;
+
+        document.getElementById('msg')
+            .textContent =
+            'Thank you, ' +
+            name +
+            '. We received your request for ' +
+            service +
+            ' and will call you to confirm.';
+
+        e.target.reset();
+
+    });
+
+
+/* COPYRIGHT YEAR */
+
+document.getElementById('yr')
+    .textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
